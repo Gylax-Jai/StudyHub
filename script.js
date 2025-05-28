@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGO_URI, { // process.env.xyz  it means you are u
   tls: true, // Enforce TLS
 }) 
   .then(() => console.log('MongoDB connected'))
-  .catch(err => console.log(err));
+  .catch(err => console.log(err)); 
 
 // Setup session
 app.use(session({
