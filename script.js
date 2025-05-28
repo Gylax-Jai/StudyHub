@@ -139,6 +139,6 @@ catch(err){
 });
 
 // Run Server
-app.listen(5000, () => {
-  console.log('Server running at http://localhost:5000');
+app.listen(3000, () => {
+  console.log('Server running at http://localhost:3000');
 });
