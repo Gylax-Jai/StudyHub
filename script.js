@@ -18,7 +18,9 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)  // process.env.xyz  it means you are using your secret information from env not directly putting here
+mongoose.connect(process.env.MONGO_URI, { // process.env.xyz  it means you are using your secret information from env not directly putting here
+  tls: true, // Enforce TLS
+}) 
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
