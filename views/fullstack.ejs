@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MERN Stack Developer Roadmap 2025</title>
+     <link rel="stylesheet" href="css/output.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    
+    .gradient-bg { 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+    }
+    
+    .card-hover { 
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+    }
+    
+    .card-hover:hover { 
+      transform: translateY(-12px); 
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15); 
+    }
+    
+    .glow { 
+      box-shadow: 0 0 30px rgba(99, 102, 241, 0.4); 
+    }
+    
+    .animated-gradient { 
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+    
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    .floating { 
+      animation: float 6s ease-in-out infinite; 
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .progress-line {
+      position: relative;
+    }
+    
+    .progress-line::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, #6366f1, #8b5cf6, #ec4899);
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    
+    .roadmap-item {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .roadmap-item::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border: 4px solid #6366f1;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+    }
+    
+    .phase-indicator {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    
+    .skill-tag {
+      transition: all 0.3s ease;
+    }
+    
+    .skill-tag:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen">
+
+    <%- include('partials/navbar') %>
+  <!-- Header -->
+  <header class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 blur-3xl"></div>
+    <div class="relative max-w-7xl mx-auto p-6 pt-12">
+      <div class="text-center bg-white/90 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-white/50">
+        <div class="inline-flex items-center gap-4 mb-6">
+          <div class="p-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-2xl floating">
+            <i class="fas fa-code text-white text-3xl"></i>
+          </div>
+          <h1 class="text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            MERN Stack Roadmap
+          </h1>
+        </div>
+        <p class="text-2xl text-gray-600 font-medium mb-4">Your Complete Guide to Full-Stack Development</p>
+        <p class="text-lg text-gray-500 max-w-3xl mx-auto leading-relaxed">
+          Master MongoDB, Express.js, React, and Node.js to become a professional full-stack developer. 
+          This roadmap covers everything from basics to advanced concepts with practical projects.
+        </p>
+        <div class="flex items-center justify-center gap-6 mt-8">
+          <div class="flex items-center gap-2 text-gray-500">
+            <i class="fas fa-clock text-blue-500"></i>
+            <span>6-12 Months</span>
+          </div>
+          <div class="flex items-center gap-2 text-gray-500">
+            <i class="fas fa-users text-purple-500"></i>
+            <span>Millions of Jobs</span>
+          </div>
+          <div class="flex items-center gap-2 text-gray-500">
+            <i class="fas fa-trophy text-yellow-500"></i>
+            <span>High Demand</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto p-6 mt-12">
+    
+    <!-- Roadmap Overview -->
+    <div class="mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+          🗺️ Learning Path Overview
+        </h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-indigo-400 to-purple-400 mx-auto rounded-full"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center group">
+          <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white font-bold text-2xl">M</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">MongoDB</h3>
+          <p class="text-gray-600 text-sm">NoSQL Database for modern applications</p>
+        </div>
+        
+        <div class="text-center group">
+          <div class="w-20 h-20 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white font-bold text-2xl">E</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Express.js</h3>
+          <p class="text-gray-600 text-sm">Fast, minimalist web framework</p>
+        </div>
+        
+        <div class="text-center group">
+          <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white font-bold text-2xl">R</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">React</h3>
+          <p class="text-gray-600 text-sm">Frontend library for user interfaces</p>
+        </div>
+        
+        <div class="text-center group">
+          <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white font-bold text-2xl">N</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Node.js</h3>
+          <p class="text-gray-600 text-sm">JavaScript runtime for server-side</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Roadmap Timeline -->
+    <div class="relative progress-line">
+      
+      <!-- Phase 1: Foundations -->
+      <div class="roadmap-item mb-16">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-8 card-hover">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="phase-indicator w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center">
+                <span class="text-white font-bold">1</span>
+              </div>
+              <h3 class="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Foundation Phase
+              </h3>
+            </div>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+              Build a solid foundation with web development basics and JavaScript fundamentals.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
+                <i class="fas fa-check-circle text-blue-500"></i>
+                <span class="text-gray-700">HTML5 & Semantic Markup</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
+                <i class="fas fa-check-circle text-blue-500"></i>
+                <span class="text-gray-700">CSS3 & Responsive Design</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
+                <i class="fas fa-check-circle text-blue-500"></i>
+                <span class="text-gray-700">JavaScript ES6+ Fundamentals</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-200">
+            <h4 class="text-xl font-bold text-blue-700 mb-4 flex items-center gap-2">
+              <i class="fas fa-tools"></i>
+              Essential Skills
+            </h4>
+            <div class="grid grid-cols-2 gap-3">
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-blue-200">HTML5</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-blue-200">CSS3</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-blue-200">JavaScript</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-blue-200">Git/GitHub</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-blue-200">VS Code</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-blue-200">Terminal</span>
+            </div>
+            <div class="mt-6 p-4 bg-blue-100 rounded-lg">
+              <div class="flex items-center gap-2 mb-2">
+                <i class="fas fa-clock text-blue-600"></i>
+                <span class="font-medium text-blue-700">Duration: 4-6 weeks</span>
+              </div>
+              <p class="text-blue-600 text-sm">Focus on understanding core concepts rather than memorizing syntax.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 2: Frontend with React -->
+      <div class="roadmap-item mb-16">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-8 border border-cyan-200 lg:order-2">
+            <h4 class="text-xl font-bold text-cyan-700 mb-4 flex items-center gap-2">
+              <i class="fas fa-rocket"></i>
+              React Ecosystem
+            </h4>
+            <div class="grid grid-cols-2 gap-3">
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-cyan-200">React.js</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-cyan-200">JSX</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-cyan-200">Hooks</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-cyan-200">State Management</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-cyan-200">React Router</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-cyan-200">Axios/Fetch</span>
+            </div>
+            <div class="mt-6 p-4 bg-cyan-100 rounded-lg">
+              <div class="flex items-center gap-2 mb-2">
+                <i class="fas fa-clock text-cyan-600"></i>
+                <span class="font-medium text-cyan-700">Duration: 6-8 weeks</span>
+              </div>
+              <p class="text-cyan-600 text-sm">Build several projects to master component-based architecture.</p>
+            </div>
+          </div>
+          
+          <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-8 card-hover lg:order-1">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="phase-indicator w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center">
+                <span class="text-white font-bold">2</span>
+              </div>
+              <h3 class="text-3xl font-bold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+                Frontend Mastery
+              </h3>
+            </div>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+              Learn React.js to build dynamic, interactive user interfaces with modern development practices.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 p-3 bg-cyan-50 rounded-lg">
+                <i class="fas fa-check-circle text-cyan-500"></i>
+                <span class="text-gray-700">React Components & Props</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-cyan-50 rounded-lg">
+                <i class="fas fa-check-circle text-cyan-500"></i>
+                <span class="text-gray-700">State Management & Hooks</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-cyan-50 rounded-lg">
+                <i class="fas fa-check-circle text-cyan-500"></i>
+                <span class="text-gray-700">API Integration & Routing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 3: Backend with Node.js & Express -->
+      <div class="roadmap-item mb-16">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-8 card-hover">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="phase-indicator w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
+                <span class="text-white font-bold">3</span>
+              </div>
+              <h3 class="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                Backend Development
+              </h3>
+            </div>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+              Master server-side development with Node.js and Express.js to build robust APIs and web services.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+                <i class="fas fa-check-circle text-green-500"></i>
+                <span class="text-gray-700">Node.js Runtime & NPM</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+                <i class="fas fa-check-circle text-green-500"></i>
+                <span class="text-gray-700">Express.js Framework</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-green-50 rounded-lg">
+                <i class="fas fa-check-circle text-green-500"></i>
+                <span class="text-gray-700">RESTful APIs & Middleware</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 border border-green-200">
+            <h4 class="text-xl font-bold text-green-700 mb-4 flex items-center gap-2">
+              <i class="fas fa-server"></i>
+              Backend Skills
+            </h4>
+            <div class="grid grid-cols-2 gap-3">
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-green-200">Node.js</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-green-200">Express.js</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-green-200">REST APIs</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-green-200">Authentication</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-green-200">JWT</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-green-200">Middleware</span>
+            </div>
+            <div class="mt-6 p-4 bg-green-100 rounded-lg">
+              <div class="flex items-center gap-2 mb-2">
+                <i class="fas fa-clock text-green-600"></i>
+                <span class="font-medium text-green-700">Duration: 6-8 weeks</span>
+              </div>
+              <p class="text-green-600 text-sm">Practice building APIs and understanding server architecture.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 4: Database with MongoDB -->
+      <div class="roadmap-item mb-16">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 border border-purple-200 lg:order-2">
+            <h4 class="text-xl font-bold text-purple-700 mb-4 flex items-center gap-2">
+              <i class="fas fa-database"></i>
+              Database Skills
+            </h4>
+            <div class="grid grid-cols-2 gap-3">
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-purple-200">MongoDB</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-purple-200">Mongoose</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-purple-200">Schemas</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-purple-200">Queries</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-purple-200">Aggregation</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-purple-200">Indexing</span>
+            </div>
+            <div class="mt-6 p-4 bg-purple-100 rounded-lg">
+              <div class="flex items-center gap-2 mb-2">
+                <i class="fas fa-clock text-purple-600"></i>
+                <span class="font-medium text-purple-700">Duration: 4-6 weeks</span>
+              </div>
+              <p class="text-purple-600 text-sm">Learn NoSQL concepts and data modeling techniques.</p>
+            </div>
+          </div>
+          
+          <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-8 card-hover lg:order-1">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="phase-indicator w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                <span class="text-white font-bold">4</span>
+              </div>
+              <h3 class="text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Database Management
+              </h3>
+            </div>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+              Learn MongoDB to store and manage your application data with flexible, document-based storage.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 p-3 bg-purple-50 rounded-lg">
+                <i class="fas fa-check-circle text-purple-500"></i>
+                <span class="text-gray-700">MongoDB Fundamentals</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-purple-50 rounded-lg">
+                <i class="fas fa-check-circle text-purple-500"></i>
+                <span class="text-gray-700">Mongoose ODM</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-purple-50 rounded-lg">
+                <i class="fas fa-check-circle text-purple-500"></i>
+                <span class="text-gray-700">Data Modeling & Queries</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Phase 5: Full Stack Integration -->
+      <div class="roadmap-item mb-16">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+          <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-8 card-hover">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="phase-indicator w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center">
+                <span class="text-white font-bold">5</span>
+              </div>
+              <h3 class="text-3xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                Full Stack Integration
+              </h3>
+            </div>
+            <p class="text-gray-600 text-lg leading-relaxed mb-6">
+              Combine all MERN technologies to build complete, production-ready applications with deployment.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
+                <i class="fas fa-check-circle text-orange-500"></i>
+                <span class="text-gray-700">Full Stack Architecture</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
+                <i class="fas fa-check-circle text-orange-500"></i>
+                <span class="text-gray-700">Testing & Security</span>
+              </div>
+              <div class="flex items-center gap-3 p-3 bg-orange-50 rounded-lg">
+                <i class="fas fa-check-circle text-orange-500"></i>
+                <span class="text-gray-700">Deployment & DevOps</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-8 border border-orange-200">
+            <h4 class="text-xl font-bold text-orange-700 mb-4 flex items-center gap-2">
+              <i class="fas fa-cogs"></i>
+              Advanced Topics
+            </h4>
+            <div class="grid grid-cols-2 gap-3">
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-orange-200">Redux/Context</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-orange-200">Testing</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-orange-200">Docker</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-orange-200">AWS/Heroku</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-orange-200">CI/CD</span>
+              <span class="skill-tag bg-white px-3 py-2 rounded-lg text-sm font-medium text-gray-700 border border-orange-200">Security</span>
+            </div>
+            <div class="mt-6 p-4 bg-orange-100 rounded-lg">
+              <div class="flex items-center gap-2 mb-2">
+                <i class="fas fa-clock text-orange-600"></i>
+                <span class="font-medium text-orange-700">Duration: 8-12 weeks</span>
+              </div>
+              <p class="text-orange-600 text-sm">Build 2-3 complete projects and deploy them live.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Project Ideas -->
+    <div class="mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+          🚀 Project Ideas
+        </h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-indigo-400 to-purple-400 mx-auto rounded-full"></div>
+        <p class="text-xl text-gray-600 mt-4">Build these projects to solidify your MERN stack skills</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-8 card-hover">
+          <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-blog text-white text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-4">Blog Platform</h3>
+          <p class="text-gray-600 mb-4">Create a full-featured blogging platform with user authentication, CRUD operations, and rich text editing.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">React</span>
+            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">Node.js</span>
+            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">MongoDB</span>
+          </div>
+        </div>
+
+        <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-8 card-hover">
+          <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-shopping-cart text-white text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-4">E-Commerce Store</h3>
+          <p class="text-gray-600 mb-4">Build a complete online store with payment integration, inventory management, and order tracking.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">React</span>
+            <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">Stripe</span>
+            <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm">Redux</span>
+          </div>
+        </div>
+
+        <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-8 card-hover">
+          <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6">
+            <i class="fas fa-comments text-white text-2xl"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-4">Social Media App</h3>
+          <p class="text-gray-600 mb-4">Create a social platform with real-time chat, posts, likes, comments, and user profiles.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">Socket.io</span>
+            <span class="px-3 py-1 bg-pink-100 text-pink-600 rounded-full text-sm">Real-time</span>
+            <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm">JWT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Learning Resources -->
+    <div class="mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4">
+          📚 Learning Resources
+        </h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-green-400 to-emerald-400 mx-auto rounded-full"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/50 text-center group hover:shadow-xl transition-all duration-300">
+          <div class="w-14 h-14 bg-gradient-to-r from-red-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <i class="fab fa-youtube text-white text-xl"></i>
+          </div>
+          <h4 class="font-bold text-gray-800 mb-2">YouTube Channels</h4>
+          <p class="text-gray-600 text-sm">Traversy Media, Net Ninja, Academind</p>
+        </div>
+
+        <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/50 text-center group hover:shadow-xl transition-all duration-300">
+          <div class="w-14 h-14 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <i class="fas fa-book text-white text-xl"></i>
+          </div>
+          <h4 class="font-bold text-gray-800 mb-2">Online Courses</h4>
+          <p class="text-gray-600 text-sm">Udemy, Coursera, freeCodeCamp</p>
+        </div>
+
+        <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/50 text-center group hover:shadow-xl transition-all duration-300">
+          <div class="w-14 h-14 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <i class="fas fa-file-alt text-white text-xl"></i>
+          </div>
+          <h4 class="font-bold text-gray-800 mb-2">Documentation</h4>
+          <p class="text-gray-600 text-sm">Official docs, MDN Web Docs</p>
+        </div>
+
+        <div class="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-white/50 text-center group hover:shadow-xl transition-all duration-300">
+          <div class="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <i class="fab fa-github text-white text-xl"></i>
+          </div>
+          <h4 class="font-bold text-gray-800 mb-2">Practice</h4>
+          <p class="text-gray-600 text-sm">GitHub, Codepen, CodeSandbox</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Career Opportunities -->
+    <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-3xl p-12 text-white text-center">
+      <h2 class="text-4xl font-bold mb-6">🎯 Career Opportunities</h2>
+      <p class="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
+        MERN Stack developers are in high demand across industries. Here's what you can expect:
+      </p>
+      
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6">
+          <div class="text-3xl font-bold mb-2">$70K - $120K</div>
+          <div class="text-lg opacity-90">Average Salary Range</div>
+        </div>
+        <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6">
+          <div class="text-3xl font-bold mb-2">500K+</div>
+          <div class="text-lg opacity-90">Job Openings</div>
+        </div>
+        <div class="bg-white/20 backdrop-blur-sm rounded-xl p-6">
+          <div class="text-3xl font-bold mb-2">85%</div>
+          <div class="text-lg opacity-90">Remote Work Options</div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white/10 rounded-lg p-4">
+          <h4 class="font-bold mb-2">Full Stack Developer</h4>
+          <p class="text-sm opacity-80">Build end-to-end applications</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-4">
+          <h4 class="font-bold mb-2">Frontend Developer</h4>
+          <p class="text-sm opacity-80">Specialize in React development</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-4">
+          <h4 class="font-bold mb-2">Backend Developer</h4>
+          <p class="text-sm opacity-80">Focus on Node.js and APIs</p>
+        </div>
+        <div class="bg-white/10 rounded-lg p-4">
+          <h4 class="font-bold mb-2">DevOps Engineer</h4>
+          <p class="text-sm opacity-80">Deployment and infrastructure</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tips for Success -->
+    <div class="mt-16 mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">
+          💡 Tips for Success
+        </h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-orange-400 to-red-400 mx-auto rounded-full"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-8">
+          <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+            <i class="fas fa-lightbulb text-yellow-500"></i>
+            Learning Strategy
+          </h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+              <p class="text-gray-700">Build projects while learning - don't just watch tutorials</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+              <p class="text-gray-700">Focus on understanding concepts, not memorizing syntax</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+              <p class="text-gray-700">Join developer communities and ask questions</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></div>
+              <p class="text-gray-700">Practice coding daily, even if it's just 30 minutes</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-8">
+          <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3">
+            <i class="fas fa-rocket text-blue-500"></i>
+            Career Tips
+          </h3>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+              <p class="text-gray-700">Build a strong portfolio with 3-5 diverse projects</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+              <p class="text-gray-700">Contribute to open source projects on GitHub</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+              <p class="text-gray-700">Network with other developers on LinkedIn and Twitter</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+              <p class="text-gray-700">Stay updated with latest trends and technologies</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <%- include('partials/footer') %>
+
+
+  <script>
+     document.getElementById('mobile-menu-button').addEventListener('click', function () {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

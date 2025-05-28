@@ -1,0 +1,165 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ion-icon {
+    color: white;
+    position: absolute;
+    right: 8px;
+    line-height: 57px;
+    top: 20px;
+    font-size: 1.2em;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/bg.jpg) no-repeat;
+    background-size: cover;
+    /* animation: bg 5s linear infinite ; */
+
+}
+@keyframes bg{
+    
+    to{
+        filter: hue-rotate(360deg);
+    }
+
+}
+
+.inputbox input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: white !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.inputbox input:-webkit-autofill:focus {
+  background-color: transparent !important;
+}
+
+
+
+.title {
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    font-size: 50px;
+}
+
+.signupform{
+    position: relative;
+    background: transparent;
+    border: 2px solid rgb(164, 156, 156);
+    width: 400px;
+    padding: 20px 0px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+.signupform:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.6);
+
+}
+
+.inputbox {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    padding-right: 35px;
+    /* border: 2px solid red; */
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: white;
+    pointer-events: none;
+    transition: all .3s ease-in-out;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1em;
+    transition: all 0.3s ease-in-out;
+}
+
+.inputbox input:focus ~ label,
+.inputbox input.filled ~ label {
+    top: -3px;
+    font-size: 0.85em;
+    color: #00bfff;
+}
+
+
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    font-size: 1em;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: lightgray;
+    /* background: #008080; */
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.5);
+}
+
+.donthave {
+    color: aliceblue;
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.donthave p {
+    color: white;
+    font-weight: 300;
+}
+
+.donthave a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.donthave a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media  only screen and (max-width: 400px) {
+    .signupform{
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        border: none;
+    }
+}

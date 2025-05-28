@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StudyHub - Online Learning Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    .glow { box-shadow: 0 0 20px rgba(99, 102, 241, 0.3); }
+    .animated-gradient { 
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .floating { animation: float 6s ease-in-out infinite; }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen">
+
+<%- include('partials/navbar') %>
+
+  <main class="max-w-7xl mx-auto p-6 mt-8 space-y-12">
+    
+    <!-- Hero Header -->
+    <div class="text-center relative">
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-3xl blur-3xl"></div>
+      <div class="relative bg-white/90 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/50">
+        <div class="inline-flex items-center gap-3 mb-4">
+          <div class="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl">
+            <i class="fas fa-network-wired text-white text-2xl"></i>
+          </div>
+          <h1 class="text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+            Computer Networks
+          </h1>
+        </div>
+        <p class="text-xl text-gray-600 font-medium">Last Minute GATE Preparation Notes</p>
+        <div class="flex items-center justify-center gap-2 mt-4 text-sm text-gray-500">
+          <i class="fas fa-clock"></i>
+          <span>Last Updated: 24 Jan, 2025</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Important Notice -->
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-300/20 to-orange-300/20 rounded-full blur-2xl"></div>
+      <div class="relative p-6 flex items-start gap-4">
+        <div class="p-3 bg-gradient-to-r from-amber-500 to-orange-500 rounded-xl shadow-lg floating">
+          <i class="fas fa-lightbulb text-white text-xl"></i>
+        </div>
+        <div>
+          <h3 class="font-bold text-amber-800 text-lg mb-2">📚 GATE Exam Focus</h3>
+          <p class="text-amber-700 leading-relaxed">This article summarizes the most important concepts frequently asked in GATE exams. Focus on understanding rather than memorizing!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 overflow-hidden">
+      <div class="bg-gradient-to-r from-indigo-500 to-purple-600 p-6">
+        <h2 class="text-2xl font-bold text-white flex items-center gap-3">
+          <i class="fas fa-list-ul"></i>
+          Table of Contents
+        </h2>
+      </div>
+      <div class="p-6">
+        <div class="grid md:grid-cols-2 gap-4">
+          <a href="#basics" class="group flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition-all duration-300 border border-transparent hover:border-blue-200">
+            <div class="w-10 h-10 bg-gradient-to-r from-blue-400 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="text-white font-bold">1</span>
+            </div>
+            <span class="font-medium text-gray-700 group-hover:text-blue-600">Network Basics</span>
+          </a>
+          <a href="#osi" class="group flex items-center gap-4 p-4 rounded-xl hover:bg-purple-50 transition-all duration-300 border border-transparent hover:border-purple-200">
+            <div class="w-10 h-10 bg-gradient-to-r from-purple-400 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="text-white font-bold">2</span>
+            </div>
+            <span class="font-medium text-gray-700 group-hover:text-purple-600">OSI Model</span>
+          </a>
+          <a href="#datalink" class="group flex items-center gap-4 p-4 rounded-xl hover:bg-green-50 transition-all duration-300 border border-transparent hover:border-green-200">
+            <div class="w-10 h-10 bg-gradient-to-r from-green-400 to-green-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="text-white font-bold">3</span>
+            </div>
+            <span class="font-medium text-gray-700 group-hover:text-green-600">Data Link Layer</span>
+          </a>
+          <a href="#network" class="group flex items-center gap-4 p-4 rounded-xl hover:bg-orange-50 transition-all duration-300 border border-transparent hover:border-orange-200">
+            <div class="w-10 h-10 bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="text-white font-bold">4</span>
+            </div>
+            <span class="font-medium text-gray-700 group-hover:text-orange-600">Network Layer</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Network Basics Section -->
+    <section id="basics" class="space-y-8">
+      <div class="text-center">
+        <h2 class="text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4">
+          🌐 Network Basics
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Network Topologies -->
+      <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 overflow-hidden card-hover">
+        <div class="bg-gradient-to-r from-blue-500 to-cyan-500 p-6">
+          <h3 class="text-2xl font-bold text-white flex items-center gap-3">
+            <i class="fas fa-project-diagram"></i>
+            Network Topologies
+          </h3>
+        </div>
+        <div class="p-8">
+          <div class="grid md:grid-cols-2 gap-6">
+            
+            <div class="group bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-200 hover:shadow-lg transition-all duration-300">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-circle-nodes text-white text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-blue-700">Mesh Topology</h4>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-3">Every device connects to every other device directly.</p>
+              <div class="bg-blue-100 rounded-lg p-3">
+                <span class="text-sm font-mono text-blue-800">Links required: N(N-1)/2</span>
+              </div>
+            </div>
+
+            <div class="group bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200 hover:shadow-lg transition-all duration-300">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-minus text-white text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-purple-700">Bus Topology</h4>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-3">All devices share a single communication line.</p>
+              <div class="bg-purple-100 rounded-lg p-3">
+                <span class="text-sm font-mono text-purple-800">Single backbone cable</span>
+              </div>
+            </div>
+
+            <div class="group bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200 hover:shadow-lg transition-all duration-300">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-star text-white text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-green-700">Star Topology</h4>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-3">All devices connect to a central hub or switch.</p>
+              <div class="bg-green-100 rounded-lg p-3">
+                <span class="text-sm font-mono text-green-800">Central point of failure</span>
+              </div>
+            </div>
+
+            <div class="group bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-xl border border-orange-200 hover:shadow-lg transition-all duration-300">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                  <i class="fas fa-circle text-white text-xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-orange-700">Ring Topology</h4>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-3">Each device connects to two others forming a ring.</p>
+              <div class="bg-orange-100 rounded-lg p-3">
+                <span class="text-sm font-mono text-orange-800">Token passing protocol</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Transmission Modes -->
+      <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 overflow-hidden card-hover">
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 p-6">
+          <h3 class="text-2xl font-bold text-white flex items-center gap-3">
+            <i class="fas fa-exchange-alt"></i>
+            Transmission Modes
+          </h3>
+        </div>
+        <div class="p-8">
+          <div class="space-y-6">
+            
+            <div class="flex items-start gap-6 p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200">
+              <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-arrow-right text-white text-2xl"></i>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-green-700 mb-2">Simplex</h4>
+                <p class="text-gray-700 text-lg leading-relaxed mb-3">Unidirectional communication - data flows in one direction only.</p>
+                <div class="bg-green-100 rounded-lg p-3 inline-block">
+                  <span class="text-green-800 font-medium">📌 Example: Keyboard to CPU</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-6 p-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl border border-yellow-200">
+              <div class="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-arrows-alt-h text-white text-2xl"></i>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-orange-700 mb-2">Half-Duplex</h4>
+                <p class="text-gray-700 text-lg leading-relaxed mb-3">Bidirectional but not simultaneous - devices take turns.</p>
+                <div class="bg-orange-100 rounded-lg p-3 inline-block">
+                  <span class="text-orange-800 font-medium">📌 Example: Walkie-talkies</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-6 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
+              <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-exchange-alt text-white text-2xl"></i>
+              </div>
+              <div>
+                <h4 class="text-2xl font-bold text-blue-700 mb-2">Full-Duplex</h4>
+                <p class="text-gray-700 text-lg leading-relaxed mb-3">Bidirectional and simultaneous - both directions at once.</p>
+                <div class="bg-blue-100 rounded-lg p-3 inline-block">
+                  <span class="text-blue-800 font-medium">📌 Example: Telephone calls</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OSI Model Section -->
+    <section id="osi" class="space-y-8">
+      <div class="text-center">
+        <h2 class="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+          🏗️ OSI Model
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto rounded-full"></div>
+        <p class="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">Open Systems Interconnection - A 7-layer networking model developed by ISO in 1984</p>
+      </div>
+
+      <!-- Physical Layer -->
+      <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 overflow-hidden card-hover">
+        <div class="bg-gradient-to-r from-red-500 to-pink-500 p-6">
+          <h3 class="text-2xl font-bold text-white flex items-center gap-3">
+            <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+              <span class="font-bold">1</span>
+            </div>
+            Physical Layer
+          </h3>
+        </div>
+        <div class="p-8">
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">Responsible for the actual transmission of raw data bits over a physical medium. Manages encoding, signaling, and physical connections.</p>
+          
+          <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <i class="fas fa-cable text-red-500"></i>
+            Transmission Media
+          </h4>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-gradient-to-br from-red-50 to-pink-50 p-6 rounded-xl border border-red-200">
+              <h5 class="font-bold text-red-700 text-lg mb-3">Twisted Pair Cable</h5>
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-red-400 rounded-full"></span>
+                  <span class="text-gray-700"><strong>UTP:</strong> Unshielded Twisted Pair</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-red-400 rounded-full"></span>
+                  <span class="text-gray-700"><strong>STP:</strong> Shielded (reduces interference)</span>
+                </div>
+                <div class="bg-red-100 rounded-lg p-2 mt-3">
+                  <span class="text-sm text-red-800">💡 Common in LANs</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-xl border border-orange-200">
+              <h5 class="font-bold text-orange-700 text-lg mb-3">Coaxial Cable</h5>
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-orange-400 rounded-full"></span>
+                  <span class="text-gray-700">Central conductor + insulation</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-orange-400 rounded-full"></span>
+                  <span class="text-gray-700">Metallic shield + outer jacket</span>
+                </div>
+                <div class="bg-orange-100 rounded-lg p-2 mt-3">
+                  <span class="text-sm text-orange-800">💡 Legacy Ethernet & Cable TV</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Reference Card -->
+    <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-2xl p-8 text-white">
+      <div class="text-center">
+        <h3 class="text-2xl font-bold mb-4">🚀 Quick Reference</h3>
+        <p class="text-lg opacity-90 mb-6">Key formulas and concepts for GATE preparation</p>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="bg-white/20 backdrop-blur-sm rounded-xl p-4">
+            <h4 class="font-bold mb-2">Mesh Links</h4>
+            <code class="text-yellow-300">N(N-1)/2</code>
+          </div>
+          <div class="bg-white/20 backdrop-blur-sm rounded-xl p-4">
+            <h4 class="font-bold mb-2">OSI Layers</h4>
+            <code class="text-yellow-300">7 Layers</code>
+          </div>
+          <div class="bg-white/20 backdrop-blur-sm rounded-xl p-4">
+            <h4 class="font-bold mb-2">ISO Standard</h4>
+            <code class="text-yellow-300">1984</code>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <%- include('partials/footer') %>
+  <script>
+     document.getElementById('mobile-menu-button').addEventListener('click', function () {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+  
+</body>
+</html>
