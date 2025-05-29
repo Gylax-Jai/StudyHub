@@ -6,6 +6,13 @@ registerbtn.addEventListener("click", (e) => {
   window.location.href = "/signup";
 });
 
+ window.onload = function () {
+    const emailInput = document.querySelector('input[name="email"]');
+    const passwordInput = document.querySelector('input[name="password"]');
+    if (emailInput) emailInput.value = '';
+    if (passwordInput) passwordInput.value = '';
+  };
+
 const form = document.querySelector("form");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
@@ -65,3 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, 100); // allow autofill to complete
 });
+
+
+ 
+
