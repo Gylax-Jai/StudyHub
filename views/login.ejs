@@ -10,17 +10,17 @@
 <body>
   <section>
     <div class="loginform">
-      <form action="/login" method="post">
+      <form action="/login" method="post" autocomplete="off">
         <h1 class="title">LOGIN</h1>
 
         <div class="inputbox">
-          <input type="email" name="email" id="email" required />
+          <input type="email" name="email" id="email" autocomplete="off" required />
           <label for="email">Email</label>
           <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
         </div>
         <div class="inputbox">
           <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-          <input type="password" name="password" id="password" required />
+          <input type="password" name="password" id="password" autocomplete="off" required />
           <label for="password">Password</label>
         </div>
         <div class="remember-forgot">

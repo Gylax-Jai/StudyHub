@@ -97,6 +97,7 @@ app.post('/signup', async (req, res) => {
 
 // Login Page
 app.get('/login', (req, res) => {
+  res.setHeader('Cache-Control', 'no-store');
   res.render('login');
 });
 
