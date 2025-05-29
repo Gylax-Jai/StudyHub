@@ -6,6 +6,34 @@ registerbtn.addEventListener("click", (e) => {
   window.location.href = "/login";
 });
 
+// Function to clear login fields
+function clearLoginFields() {
+ const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+  if (emailInput) emailInput.value = '';
+  if (passwordInput) passwordInput.value = '';
+}
+
+// Clear fields on page load
+window.onload = function () {
+  clearLoginFields();
+};
+
+// Clear fields when page becomes visible (handles back/forward navigation)
+document.addEventListener('visibilitychange', function() {
+  if (!document.hidden) {
+    clearLoginFields();
+  }
+});
+
+// Clear fields when page gains focus (handles tab switching)
+window.addEventListener('focus', function() {
+  clearLoginFields();
+});
+
+
+
+
 const form = document.querySelector("form");
 const usernameInput = document.getElementById("username");
 const emailInput = document.getElementById("email");
@@ -66,16 +94,19 @@ form.addEventListener("submit", (e) => {
 document.addEventListener("DOMContentLoaded", function () {
   const inputs = document.querySelectorAll(".inputbox input");
 
-  inputs.forEach((input) => {
-    const toggleFilledClass = () => {
-      if (input.value.trim() !== "") {
-        input.classList.add("filled");
-      } else {
-        input.classList.remove("filled");
-      }
-    };
-    toggleFilledClass();
-    input.addEventListener("input", toggleFilledClass);
-    input.addEventListener("blur", toggleFilledClass);
-  });
+  setTimeout(() => {
+    inputs.forEach((input) => {
+      const toggleFilledClass = () => {
+        if (input.value.trim() !== "") {
+          input.classList.add("filled");
+        } else {
+          input.classList.remove("filled");
+        }
+      };
+      toggleFilledClass(); // initial check after autofill
+      
+      input.addEventListener("input", toggleFilledClass);
+      input.addEventListener("blur", toggleFilledClass);
+    });
+  }, 100); // allow autofill to complete
 });
