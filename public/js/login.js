@@ -7,8 +7,8 @@ registerbtn.addEventListener("click", (e) => {
 
 // Function to clear login fields
 function clearLoginFields() {
-  const emailInput = document.querySelector('input[name="email"]');
-  const passwordInput = document.querySelector('input[name="password"]');
+ const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
   if (emailInput) emailInput.value = '';
   if (passwordInput) passwordInput.value = '';
 }
