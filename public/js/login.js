@@ -47,16 +47,21 @@ form.addEventListener("submit", (e) => {
 document.addEventListener("DOMContentLoaded", function () {
   const inputs = document.querySelectorAll(".inputbox input");
 
-  inputs.forEach((input) => {
-    const toggleFilledClass = () => {
-      if (input.value.trim() !== "") {
-        input.classList.add("filled");
-      } else {
-        input.classList.remove("filled");
-      }
-    };
-    toggleFilledClass();
-    input.addEventListener("input", toggleFilledClass);
-    input.addEventListener("blur", toggleFilledClass);
-  });
+  // Wait for autofill to apply
+  setTimeout(() => {
+    inputs.forEach((input) => {
+      const toggleFilledClass = () => {
+        if (input.value.trim() !== "") {
+          input.classList.add("filled");
+        } else {
+          input.classList.remove("filled");
+        }
+      };
+
+      toggleFilledClass(); // initial check after autofill
+      
+      input.addEventListener("input", toggleFilledClass);
+      input.addEventListener("blur", toggleFilledClass);
+    });
+  }, 100); // allow autofill to complete
 });
