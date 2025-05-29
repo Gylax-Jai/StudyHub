@@ -1,10 +1,3 @@
-window.addEventListener("pageshow", function () {
-  const emailInput = document.getElementById("email");
-  const passwordInput = document.getElementById("password");
-
-  if (emailInput) emailInput.value = '';
-  if (passwordInput) passwordInput.value = '';
-});
 
 
 let registerbtn = document.querySelector(".register");
@@ -14,6 +7,33 @@ registerbtn.addEventListener("click", (e) => {
   console.log("i am clicked");
   window.location.href = "/signup";
 });
+
+// Function to clear login fields
+function clearLoginFields() {
+  const emailInput = document.querySelector('input[name="email"]');
+  const passwordInput = document.querySelector('input[name="password"]');
+  if (emailInput) emailInput.value = '';
+  if (passwordInput) passwordInput.value = '';
+}
+
+// Clear fields on page load
+window.onload = function () {
+  clearLoginFields();
+};
+
+// Clear fields when page becomes visible (handles back/forward navigation)
+document.addEventListener('visibilitychange', function() {
+  if (!document.hidden) {
+    clearLoginFields();
+  }
+});
+
+// Clear fields when page gains focus (handles tab switching)
+window.addEventListener('focus', function() {
+  clearLoginFields();
+});
+
+
 
 const form = document.querySelector("form");
 const emailInput = document.getElementById("email");
