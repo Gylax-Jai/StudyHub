@@ -1,3 +1,12 @@
+window.addEventListener("pageshow", function () {
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+
+  if (emailInput) emailInput.value = '';
+  if (passwordInput) passwordInput.value = '';
+});
+
+
 let registerbtn = document.querySelector(".register");
 
 registerbtn.addEventListener("click", (e) => {
@@ -5,13 +14,6 @@ registerbtn.addEventListener("click", (e) => {
   console.log("i am clicked");
   window.location.href = "/signup";
 });
-
- window.onload = function () {
-    const emailInput = document.querySelector('input[name="email"]');
-    const passwordInput = document.querySelector('input[name="password"]');
-    if (emailInput) emailInput.value = '';
-    if (passwordInput) passwordInput.value = '';
-  };
 
 const form = document.querySelector("form");
 const emailInput = document.getElementById("email");
