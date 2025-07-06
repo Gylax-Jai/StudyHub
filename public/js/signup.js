@@ -110,3 +110,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, 100); // allow autofill to complete
 });
+
+
+const error=document.getElementById("error-message");
+if(error){
+  setTimeout(()=>{
+    error.style.display="none";
+  },3000)
+}

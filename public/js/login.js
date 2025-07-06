@@ -34,38 +34,42 @@ const form = document.querySelector("form");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 
-let valid;
+// let valid;
 
-function validateEmail() {
-  const email = emailInput.value.trim();
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    alert("Please enter a valid email address.");
-    valid = false;
-  }
-}
+// function validateEmail() {
+//   const email = emailInput.value.trim();
+//   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//   if (!emailRegex.test(email)) {
+//     alert("Please enter a valid email address.");
+//     valid = false;
+//   }
+// }
 
-function validatePassword() {
-  const password = passwordInput.value;
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,}$/;
-  if (!passwordRegex.test(password)) {
-    alert("Password must be at least 7 characters long and contain at least one letter, one number, and one special character.");
-    valid = false;
-  }
-}
+// function validatePassword() {
+//   const password = passwordInput.value;
+//   const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{7,}$/;
+//   if (!passwordRegex.test(password)) {
+//     alert("Password must be at least 7 characters long and contain at least one letter, one number, and one special character.");
+//     valid = false;
+//   }
+// }
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
+  if (!emailInput.value.trim() || !passwordInput.value.trim()) {
+    e.preventDefault();
+    alert("Please fill in both email and password.");
+    return;
+  }
   
-  valid = true; // reset before validation
-  validateEmail();
-  validatePassword();
-  if (valid) { 
+  // valid = true; // reset before validation
+  // validateEmail();
+  // validatePassword();
+  // if (valid) { 
     // Enable autofill for future saves
     emailInput.setAttribute('autocomplete', 'username');
     passwordInput.setAttribute('autocomplete', 'current-password');
     form.submit(); 
-  }
+  // }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -99,3 +103,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, 100); // allow autofill to complete
 });
+
+   const error=document.getElementById("error-message");
+    if(error){
+    setTimeout(()=>{
+      error.style.display="none";
+    },3000);
+    
+    }

@@ -12,6 +12,12 @@
   <section>
     <div class="loginform">
       <form action="/login" method="post">
+            <% if (query?.error) {%>
+                <p id="error-message" style="color: red; text-align: center; font-weight: 500; margin-bottom: 10px;">
+             <%=query.error %>     
+                </p>
+                <% } %>
+
         <h1 class="title">LOGIN</h1>
 
         <div class="inputbox">
